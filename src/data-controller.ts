@@ -9,16 +9,25 @@ function generateProductHTML(product: Product): string {
             </div>`;
 }
 
-function renderProducts(prods: Product[]): void {
-    // your code
+function renderProducts(products: Product[]): void {
+    const container = document.getElementById('app');
+    if (container) {
+        container.innerHTML = ''; // Clear previous content
+        products.forEach(product => {
+            const productHTML = generateProductHTML(product);
+            container.innerHTML += productHTML;
+        });
+    }
 }
 
-function getByCategory(category: string): void {
-    // your code
+
+function getByCategory(products: Product[], category: string): Product[] {
+    return products.filter(product => product.category === category);
 }
 
-function getByRating(minRating: number): void {
-    // your code
+function getByRating(products: Product[], minRating: number): Product[] {
+    return products.filter(product => product.rating >= minRating);
 }
+
 
 export { renderProducts, getByCategory, getByRating };

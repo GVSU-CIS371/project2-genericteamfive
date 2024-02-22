@@ -29,6 +29,24 @@
         import { renderProducts, getByCategory, getByRating } from './src/data-controller.ts';
         renderProducts(products);
 
+        // Function to handle click event for category filters
+        function handleCategoryClick(category) {
+            const filteredProducts = getByCategory(products, category);
+            renderProducts(filteredProducts);
+        }
+
+        // Function to handle click event for best sellers
+        function handleBestSellerClick() {
+            const filteredProducts = getByRating(products, 4.5);
+            renderProducts(filteredProducts);
+        }
+
+
+        document.getElementById('electronics').addEventListener('click', () => handleCategoryClick('Electronics'));
+        document.getElementById('clothing').addEventListener('click', () => handleCategoryClick('Clothing'));
+        document.getElementById('groceries').addEventListener('click', () => handleCategoryClick('Groceries'));
+        document.getElementById('bestSeller').addEventListener('click', handleBestSellerClick());
+
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
 
         // - "Electronics" should display all products categorized as "Electronics."

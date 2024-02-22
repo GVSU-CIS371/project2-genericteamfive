@@ -13,6 +13,9 @@ html {
   display: grid;
   grid-template-rows: 5rem 1fr 3rem;
   overflow-x: hidden;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
 }
 
 
@@ -91,8 +94,8 @@ main {
 }
 
 img {
-  width: 200px;
-  height: 200px;
+  max-width: 100%;
+  height: auto;
   grid-area: img;
 }
 
