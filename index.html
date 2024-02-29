@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,10 +43,22 @@
         }
 
 
-        document.getElementById('electronics').addEventListener('click', () => handleCategoryClick('Electronics'));
-        document.getElementById('clothing').addEventListener('click', () => handleCategoryClick('Clothing'));
-        document.getElementById('groceries').addEventListener('click', () => handleCategoryClick('Groceries'));
-        document.getElementById('bestSeller').addEventListener('click', handleBestSellerClick());
+document.getElementById('electronics').addEventListener('click', (event) => {
+    event.preventDefault();
+    handleCategoryClick('Electronics');
+});
+document.getElementById('clothing').addEventListener('click', (event) => {
+    event.preventDefault();
+    handleCategoryClick('Clothing');
+});
+document.getElementById('groceries').addEventListener('click', (event) => {
+    event.preventDefault();
+    handleCategoryClick('Groceries');
+});
+document.getElementById('bestSeller').addEventListener('click', (event) => {
+    event.preventDefault();
+    handleBestSellerClick();
+});
 
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
 
