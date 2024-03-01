@@ -71,7 +71,7 @@ main {
 
 .store-item {
   padding: 1rem;
-  box-shadow: 0 0 10px 2px #f0f0f0;
+  box-shadow: 0 0 10px 2px #030303;
   border: 1px solid #274156;
   border-radius: 2rem;
   text-align: center;
@@ -94,9 +94,10 @@ main {
 }
 
 img {
-  width: 500px; /* Adjust this value to change the size of the square */
-  height: 500px; /* Should be the same as width */
+  width: 500px;
+  height: 500px;
   grid-area: img;
+  
 }
 
 /* FOOTER*/

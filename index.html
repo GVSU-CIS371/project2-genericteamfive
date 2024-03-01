@@ -43,22 +43,10 @@
         }
 
 
-document.getElementById('electronics').addEventListener('click', (event) => {
-    event.preventDefault();
-    handleCategoryClick('Electronics');
-});
-document.getElementById('clothing').addEventListener('click', (event) => {
-    event.preventDefault();
-    handleCategoryClick('Clothing');
-});
-document.getElementById('groceries').addEventListener('click', (event) => {
-    event.preventDefault();
-    handleCategoryClick('Groceries');
-});
-document.getElementById('bestSeller').addEventListener('click', (event) => {
-    event.preventDefault();
-    handleBestSellerClick();
-});
+document.getElementById('electronics').addEventListener('click', () => getByCategory('Electronics'));
+document.getElementById('clothing').addEventListener('click', () => getByCategory('Clothing'));
+document.getElementById('groceries').addEventListener('click', () => getByCategory('Groceries'));
+document.getElementById('bestSeller').addEventListener('click', () => getByRating(4.5));
 
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
 
