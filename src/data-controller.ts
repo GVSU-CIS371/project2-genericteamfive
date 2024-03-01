@@ -1,4 +1,4 @@
-import { Product, products} from "./data";
+import { Product, products } from "./data";
 
 function generateProductHTML(product: Product): string {
     return `<div class="store-item">
@@ -9,25 +9,23 @@ function generateProductHTML(product: Product): string {
             </div>`;
 }
 
-function renderProducts(products: Product[]): void {
-    const container = document.getElementById('app');
-    if (container) {
-        //research says we need to clear previous content via container.innerHTML = '';
-        products.forEach(product => {
-            const productHTML = generateProductHTML(product);
-            container.innerHTML += productHTML;
-        });
+function renderProducts(prods: Product[]): void {
+    const mainContainer = document.getElementById('main-container');
+    if (mainContainer) {
+        mainContainer.innerHTML = prods.map(generateProductHTML).join('');
+    } else {
+        console.error('Main container not found');
     }
 }
 
-
-function getByCategory(products: Product[], category: string): Product[] {
-    return products.filter(product => product.category === category);
+function getByCategory(category: string): void {
+    const filteredProducts = products.filter(product => product.category === category);
+    renderProducts(filteredProducts);
 }
 
-function getByRating(products: Product[], minRating: number): Product[] {
-    return products.filter(product => product.rating >= minRating);
+function getByRating(minRating: number): void {
+    const filteredProducts = products.filter(product => product.rating > minRating);
+    renderProducts(filteredProducts);
 }
-
 
 export { renderProducts, getByCategory, getByRating };
