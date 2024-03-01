@@ -94,8 +94,8 @@ main {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: 500px; /* Adjust this value to change the size of the square */
+  height: 500px; /* Should be the same as width */
   grid-area: img;
 }
 
